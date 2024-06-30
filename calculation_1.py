@@ -64,7 +64,7 @@ for i in range(steps):
 ypoints = np.array(z)
 xpoints = np.array(t)
 
-name = '/Users/gansz/PycharmProjects/pythonProject/1.png'
+name = '/Users/gansz/Downloads/CUPT2024/PythonAnalysis/plots/plot_1.png'
 
 plt.plot(xpoints, ypoints, lw='0.5')
 plt.savefig(name, dpi=320)
