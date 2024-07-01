@@ -69,14 +69,14 @@ def __plot():
 
 
 def optimized_read(d:dict, key):
-    key_value = -1
+    key_value = -2
     count = 0
     for i in d:
         count += 1
         if (abs((i-key)/i) < 0.01):
             key_value = d[i]
             break
-    if key_value == -1:
+    if key_value == -2:
         print(count,key_value)
     return key_value
 
