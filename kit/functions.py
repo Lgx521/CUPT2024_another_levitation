@@ -2,7 +2,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 from kit.Constants import *
 
-__all__ = ['F', 'F_m']
+__all__ = ['F', 'F_m', 'optimized_read']
 
 
 # The eddy current excited force
@@ -26,14 +26,12 @@ def F(z):
     # 相减相当于完成最后一步莱布尼茨公式的积分运算，获得积分值
     f = F1(z - H + D) - F1(z - H) + F2(z - H + D) - F2(z - H) + F3(z - H + D) - F3(z - H)
     result = ((9 * sigma * (mu_0 ** 2) * (m_2 ** 2)) / (8 * pi * m)) * f
-    # print(result)
     return -result
 
 
 #磁力
 def F_m(z):
     fm = (3*mu_0*m_1*m_2)/(2*pi*(z**4)*m)
-    #print(fm)
     return fm
 
 
@@ -68,6 +66,19 @@ def __plot():
     plt.ylabel('ratio of ECRF to M-force')
     plt.savefig('/Users/gansz/Downloads/CUPT2024/PythonAnalysis/plots/ratio_of_two_force.png', dpi=320)
     plt.show()
+
+
+def optimized_read(d:dict, key):
+    key_value = -1
+    count = 0
+    for i in d:
+        count += 1
+        if (abs((i-key)/i) < 0.01):
+            key_value = d[i]
+            break
+    if key_value == -1:
+        print(count,key_value)
+    return key_value
 
 # @test
 if __name__ == '__main__':
