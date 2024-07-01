@@ -75,7 +75,7 @@ plt.legend()
 
 plt.subplot(1, 3, 3)
 plt.plot(zh, spd, lw='1', label='Speed/(m/s)')
-plt.title('Speed of Magnet(Without the magnet behind the copper plate)')
+plt.title('Speed (Only the plate and falling magnet)')
 plt.grid()
 plt.legend()
 
