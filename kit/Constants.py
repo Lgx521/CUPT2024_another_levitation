@@ -28,11 +28,11 @@ m_2 = m_left * V_2 / mu_0
 
 # Initial configuration
 D = 0.02
-H = 0.0275
+# H = 0.0275
+H = 0.025
 R = 0.05
-# h0 = 0.014
-h0 = 0.0075
+h0 = 0.014
 
 
 if __name__ == '__main__':
-    print(V_2)
+    print(m)

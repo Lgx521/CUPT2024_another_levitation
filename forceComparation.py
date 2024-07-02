@@ -48,7 +48,7 @@ for i in range(interval):
     speed[i] = -1 * temp
     F_1_raw[i] = -F(z0[i])
     F_2[i] = F_m(z0[i])
-    ratio[i] = - F_1[i] / F_2[i]
+    ratio[i] = F_1[i] / F_2[i]
 
 f1 = np.array(F_1)
 f1_raw = np.array(F_1_raw)
